@@ -4,9 +4,15 @@ public class Main {
 	
 	public static void main(String[] args) {
 		
+	    //Aqui ajusta a taxa do subtotal
+		
+		System.setProperty("tax.rate", "0.15");
+		
 		Order o = new Order();
+		
 		o.add(new Item("Café", 8.0, 2)); // 16
 		o.add(new Item("Bolo", 12.5, 1)); // 12.5 -> subtotal 28.5
+		
 		String receipt = new ReceiptService().generate(o);
 		System.out.println(receipt);
 		
